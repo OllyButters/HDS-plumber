@@ -8,6 +8,7 @@
 #########################################
 
 # library(plumber)
+# could use gapminder?
 
 #* Echo back the input
 #* @param msg The message to echo

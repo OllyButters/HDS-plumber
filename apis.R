@@ -6,6 +6,7 @@
 
 # Bioontology needs an API key
 # Good list of public APIs - https://github.com/public-apis/public-apis
+# https://openaq.org/#/?_k=h8s64f
 
 # API
 
