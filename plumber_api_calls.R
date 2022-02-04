@@ -14,3 +14,7 @@ response
 
 # Convert the response to R data object
 fromJSON(rawToChar(response$content))
+
+
+
+response = GET("http://localhost:4176/hello")
