@@ -8,7 +8,7 @@ library(jsonlite)
 library(tidyverse)
 
 ##########################################
-# UK corona virus data
+# UK coronavirus data
 # https://api.coronavirus.data.gov.uk/v1/data
 
 response = GET('https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=nation;areaName=england&structure={"date":"date","newCases":"newCasesByPublishDate"}')

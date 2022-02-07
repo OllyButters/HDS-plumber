@@ -1,12 +1,11 @@
 #######################################
-# Exercises
+# Exercises 4-7 plumber ANSWERS
 
 ###################################
-# Answers
-
-# 1
 
 library(gapminder)
+
+# Exercise 4
 
 #* Population of the UK in 1982
 #* @get /UK_pop_1982
@@ -14,7 +13,7 @@ function() {
   gapminder[gapminder$country=="United Kingdom" & gapminder$year==1982, "pop"]
 }
 
-# 2
+# Exercise 5
 
 #* Population of any country anytime
 #* @param country country name
@@ -25,7 +24,7 @@ function(country, year) {
 }
 
 
-# 3
+# Exercise 6
 
 #* Plot population change over time
 #* @serializer png
@@ -37,4 +36,4 @@ function(country) {
 }
 
 
-
+# Exercise 7
