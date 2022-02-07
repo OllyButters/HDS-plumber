@@ -9,8 +9,6 @@
 
 #########################################
 
-# library(plumber)
-
 #* Say hello
 #* @get /hello
 function() {
@@ -47,6 +45,7 @@ function() {
 # 4 - connect to an external API and show the data.
 
 
+###################################
 # Answers
 
 # 1

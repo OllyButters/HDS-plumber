@@ -18,3 +18,4 @@ fromJSON(rawToChar(response$content))
 
 
 response = GET("http://localhost:4176/hello")
+fromJSON(rawToChar(response$content))
