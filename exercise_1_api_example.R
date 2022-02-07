@@ -1,5 +1,5 @@
 ##########################################
-# API example
+# exercise 1 API example
 # How many people are in space right now?
 # Run this line at a time.
 ##########################################
