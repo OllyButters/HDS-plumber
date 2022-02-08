@@ -2,12 +2,12 @@
 
 ## Pre-requisiste R libraries
 
-httr
-jsonlite
-tidyverse
-plumber
-gapminder
-png
+- httr
+- jsonlite
+- tidyverse
+- plumber
+- gapminder
+- png
 
 ## Running order
 
@@ -19,7 +19,6 @@ png
 - Exercise 4: Write a plumber function to use gapminder data to show population of the UK in 1982
 - Exercise 5: Write a plumber function to allow a user to find out the population of any country during any year in gapminder.
 - Exercise 6: Write a plumber function to plot the population change of a user defined country.
-- Exercise 7: connect to an external API and show the data.
 
 ## Exercise 1: Using an API - how many people are in space right now?
 
@@ -74,7 +73,8 @@ exercise_3_plumber_example_server.R file.
 
 To run it you will need to stop the current plumber instance running - in the 
 console window press the red stop button at the top. Then to start plumber again
-press the Run API button at the top. This will start swagger again so you can test it.
+press the Run API button at the top. This will start swagger again so you can 
+test it. You will need to do this every time you edit the plumber code.
 
 Write some code to connect to your new endpoint to retrieve the data in the 
 client RStudio you have running. It might be helpful to refer to the code in
@@ -94,6 +94,3 @@ Write a new plumber function to return a plot of the population of a user
 supplied country for all available dates.
 
 Connect to it from the client RStudio and plot the population of Afghanistan.
-
-## Exercise 7: connect to an external API and show the data.
-

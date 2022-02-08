@@ -12,7 +12,7 @@ library(png)
 #####
 # Hello endpoint
 
-hello_response = GET("http://127.0.0.1:4342/hello")
+hello_response = GET("http://127.0.0.1:8483/hello")
 
 # Look at the response.
 hello_response
@@ -29,7 +29,7 @@ hello_data
 #####
 # square endpoint
 # Note how we are passing a parameter to it
-square_response = GET("http://127.0.0.1:4342/square?a=5")
+square_response = GET("http://127.0.0.1:8483/square?a=5")
 
 # Look at the response.
 square_response
@@ -45,7 +45,7 @@ square_data
 #####
 # plot endpoint
 
-plot_response = GET("http://127.0.0.1:4342/plot")
+plot_response = GET("http://127.0.0.1:8483/plot")
 
 # Look at the response.
 plot_response
