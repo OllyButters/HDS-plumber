@@ -63,9 +63,16 @@ external APIs we started with (space and Covid-19).
 ## Exercise 4 - Write a plumber function to use gapminder data to show population of the UK in 1982
 
 The gapminder library has data on countries every 5 years 1952-2007. To look at it run
-> gapminder
+
+    > gapminder
+
 To just look at UK data run
-> gapminder[gapminder$country=="United Kingdom", ]
+
+    > gapminder[gapminder$country=="United Kingdom", ]
+    
+To look at UK population in the year 1987
+    
+    > gapminder[gapminder$country=="United Kingdom" & gapminder$year==1987, "pop"]
 
 In a new file, write a plumber function to return the number of people in the UK
 in 1982. It might be helpful to base it on the code in 
@@ -86,7 +93,7 @@ Write a new plumber function to return the population of any country (as
 supplied by a user) in any year (as supplied by the user), and run it.
 
 Connect to it from the client RStudio and find out the population of Afghanistan 
-in 1982.
+in 1982. Remember the format of the query part of URLs - ?variableA=1&variableB=2
 
 ## Exercise 6: Write a plumber function to plot the population change of a user defined country.
 
