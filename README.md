@@ -60,6 +60,9 @@ you'll be interacting with example plumber code in the same way you did with the
 external APIs we started with (space and Covid-19).
 
 
+**Example answers to exercises 4,5,6 are in this repo - do not look at them unless you are stuck, 
+I want you to write your own versions.**
+
 ## Exercise 4 - Write a plumber function to use gapminder data to show population of the UK in 1982
 
 The gapminder library has data on countries every 5 years 1952-2007. To look at it run
