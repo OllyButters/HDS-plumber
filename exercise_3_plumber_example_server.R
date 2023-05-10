@@ -1,7 +1,8 @@
-##########################################
+################################################################################
 # exercise 3 plumber example
-# run this code to see plumber in action
-##########################################
+# run this code by clicking on the "Run API" button on the top right. This will
+# open a web browser with swagger running
+################################################################################
 
 #* Say hello
 #* @get /hello

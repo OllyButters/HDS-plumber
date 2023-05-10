@@ -12,7 +12,7 @@ library(png)
 #####
 # UK endpoint
 
-uk_response = GET("http://127.0.0.1:8483/UK_pop_1982")
+uk_response = GET("http://127.0.0.1:9726/UK_pop_1982")
 
 # Look at the response.
 uk_response
@@ -29,7 +29,7 @@ uk_data
 #####
 # population endpoint
 # Note how we are passing a parameter to it
-pop_response = GET("http://127.0.0.1:8483/pop?country=Afghanistan&year=1982")
+pop_response = GET("http://127.0.0.1:9726/pop?country=Afghanistan&year=1982")
 
 # Look at the response.
 pop_response
@@ -45,7 +45,7 @@ pop_data
 #####
 # plot endpoint
 
-pop_change_response = GET("http://127.0.0.1:8483/pop_change?country=Afghanistan")
+pop_change_response = GET("http://127.0.0.1:9726/pop_change?country=Afghanistan")
 
 # Look at the response.
 pop_change_response

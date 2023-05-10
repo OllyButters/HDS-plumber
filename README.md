@@ -9,6 +9,22 @@
 - gapminder
 - png
 
+
+
+Can install missing packages with the following R code:
+
+    # Package names
+    packages <- c("httr", "jsonlite", "tidyverse", "plumber", "gapminder", "png")
+    
+    # Install packages not yet installed
+    installed_packages <- packages %in% rownames(installed.packages())
+    if (any(installed_packages == FALSE)) {
+      install.packages(packages[!installed_packages])
+    }
+
+
+
+
 ## Running order
 
 - Lecture: Introduction to APIs
@@ -22,23 +38,26 @@
 
 ## Exercise 1: Using an API - how many people are in space right now?
 
-Run the exercise_1_api_example.R script line at a time and follow the comments.
+Run the exercise_1_api_who_is_in_space_now.R script line at a time and follow the comments.
 
 ## Exercise 2: Using an API - what is the UK Covid-19 case rate?
 
 Write a new R script to get the daily UK Covid-19 case rate and plot it.
-You can start with the exercise_1_api_example.R file as the basis for this exercise. 
+You can start with the exercise_1_api_who_is_in_space_now.R file as the basis for this exercise. 
 The URL you will need to use is:
 
-https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=nation;areaName=england&structure={"date":"date","newCases":"newCasesByPublishDate"
+    https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=nation;areaName=england&structure={"date":"date","newCases":"newCasesByPublishDate"}
 
 
 ## Exercise 3: Run example plumber functions (/hello, /square, /plot)
 
+### Server set up
 open exercise_3_plumber_example_server.R
 
 In the menu bar above the source code click on "Run API", this will open a web
 browser with the swagger interface. Note the URL and port number.
+
+### Explore with swagger
 
 - Click on the "GET /hello say hello" bar.
 - Click on the "Try it out" button.
@@ -46,6 +65,19 @@ browser with the swagger interface. Note the URL and port number.
 - Look for the Response body and you will see the "Hello world!" text from the R function.
 - Explore all three end points (/hello, /square, /plot), making sure you 
     understand the corresponding R code.
+
+### Explore with web browser
+
+Swagger is a web tool which calls the API for us and displays the data in an easy
+to use way. What happens if we call the API directly from a web browser without
+swagger? Paste the URLs from earlier into Chrome/Firefox/etc, they should look 
+something like (the port will be different):
+
+- 127.0.0.1:3726/hello
+- 127.0.0.1:3726/square?a=8
+- 127.0.0.1:3726/plot
+
+### Explore with Rstudio
 
 As noted earlier, Swagger is great for exploring APIs, but we want to access our
 API in the same way we did at the start of this session via R. To do this start 
@@ -67,6 +99,7 @@ I want you to write your own versions.**
 
 The gapminder library has data on countries every 5 years 1952-2007. To look at it run
 
+    > library(gapminder)
     > gapminder
 
 To just look at UK data run
@@ -82,13 +115,14 @@ in 1982. It might be helpful to base it on the code in
 exercise_3_plumber_example_server.R file.
 
 To run it you will need to stop the current plumber instance running - in the 
-console window press the red stop button at the top. Then to start plumber again
-press the Run API button at the top. This will start swagger again so you can 
-test it. You will need to do this every time you edit the plumber code.
+console window (below the code window) press the red stop button at the top. 
+Then to start plumber again press the Run API button at the top. This will start
+swagger again so you can test it. You will need to do this every time you edit
+the plumber code.
 
 Write some code to connect to your new endpoint to retrieve the data in the 
-client RStudio you have running. It might be helpful to refer to the code in
-exercise_3_plumber_example_client.R 
+client RStudio you have running. It might be helpful to base this on the code in
+exercise_3_plumber_example_client.R
 
 ## Exercise 5: Write a plumber function to allow a user to find out the population of any country during any year in gapminder.
 

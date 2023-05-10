@@ -22,6 +22,8 @@ content$data
 # Plot the data
 gg <- ggplot(data=content$data, mapping = aes(x=as.POSIXct(date), y=newCases)) +
   geom_point(color="blue") +
-  xlab("Date")
+  xlab("Date") +
+  ylab("New cases") +
+  ggtitle("Covid-19 case rate in England")
 plot(gg)
 

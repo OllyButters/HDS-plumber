@@ -1,18 +1,20 @@
-########################################
+################################################################################
 # exercise 3 connect to plumber example.
 # connect to the plumber API running in the other RStudio instance.
 # Note the IP address and ports used below - you will have to update them to
 # match where your plumber is running
-########################################
+################################################################################
+
 
 library(httr)
 library(jsonlite)
 library(png)
 
+port_number = 3726
+
 #####
 # Hello endpoint
-
-hello_response = GET("http://127.0.0.1:8483/hello")
+hello_response = GET("http://127.0.0.1", port=port_number, path="hello")
 
 # Look at the response.
 hello_response
@@ -29,7 +31,7 @@ hello_data
 #####
 # square endpoint
 # Note how we are passing a parameter to it
-square_response = GET("http://127.0.0.1:8483/square?a=5")
+square_response = GET("http://127.0.0.1", port=port_number, path="square", query="a=5")
 
 # Look at the response.
 square_response
@@ -45,7 +47,7 @@ square_data
 #####
 # plot endpoint
 
-plot_response = GET("http://127.0.0.1:8483/plot")
+plot_response = GET("http://127.0.0.1", port=port_number, path="plot")
 
 # Look at the response.
 plot_response

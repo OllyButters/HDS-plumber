@@ -1,12 +1,10 @@
 ##########################################
-# exercise 1 API example
-# How many people are in space right now?
+# exercise 1 API - Who is in space now?
 # Run this file one line at a time (Ctrl - Enter).
 ##########################################
 
 library(httr)             # Needed for request/response with API
 library(jsonlite)         # Needed to decode the response data from the API
-
 
 # Send request to the API and get a response back
 response = GET("http://api.open-notify.org/astros.json")
@@ -15,7 +13,7 @@ response = GET("http://api.open-notify.org/astros.json")
 response
 
 # This is actually just some header info. Note the "Status: 200" line, which 
-# tells us the request/response  executed successfully. 
+# tells us the request/response executed successfully. 
 # We can also see the "Content-Type: application/json" line which tells us the
 # format of the returned data.
 
@@ -27,14 +25,14 @@ response
 # Print the the content section of the response
 response$content
 
-# But the content is in binary, so convert the response to R data object
-data = fromJSON(rawToChar(response$content))
+# But the content is in binary, so convert the response to an R data object
+content = fromJSON(rawToChar(response$content))
 
 # Print the data. Note that it is a list with 3 items (message, number, people)
-data
+content
 
 # Print out just the people.
-data$people
+content$people
 
 # Now you know who is in space right now!
 
