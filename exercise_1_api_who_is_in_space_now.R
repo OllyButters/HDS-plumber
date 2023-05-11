@@ -1,13 +1,13 @@
-##########################################
+################################################################################
 # exercise 1 API - Who is in space now?
 # Run this file one line at a time (Ctrl - Enter).
-##########################################
+################################################################################
 
 library(httr)             # Needed for request/response with API
 library(jsonlite)         # Needed to decode the response data from the API
 
 # Send request to the API and get a response back
-response = GET("http://api.open-notify.org/astros.json")
+response = GET('http://api.open-notify.org/astros.json')
 
 # Print the response.
 response
