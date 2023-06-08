@@ -36,6 +36,8 @@ Open RStudio and navigate to the folder containing this README.md file. Set this
 
 Run the exercise_1_api_who_is_in_space_now.R script one line at a time (Ctrl-Enter) and read the comments as you go.
 
+In a web browser open up the link directly to the API we are using: http://api.open-notify.org/astros.json . Depending on your browser you may see the raw JSON data, or it may be formatted nicely for you. Either way, you should be able to see the same data as you see in R.
+
 ## Exercise 2: Using an API - what is the UK Covid-19 case rate?
 
 Write a new R script to get the daily UK Covid-19 case rate and plot it.
