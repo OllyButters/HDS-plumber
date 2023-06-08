@@ -4,7 +4,6 @@
 
 - httr
 - jsonlite
-- tidyverse
 - plumber
 - gapminder
 - png
@@ -12,7 +11,7 @@
 You can install missing packages with the following R code:
 
     # Package names
-    packages <- c("httr", "jsonlite", "tidyverse", "plumber", "gapminder", "png")
+    packages <- c("httr", "jsonlite", "plumber", "gapminder", "png")
     
     # Install packages not yet installed
     installed_packages <- packages %in% rownames(installed.packages())
@@ -32,6 +31,8 @@ You can install missing packages with the following R code:
 - Exercise 6: Write a plumber function to plot the population change of a user defined country.
 
 ## Exercise 1: Using an API - how many people are in space right now?
+
+Open RStudio and navigate to the folder containing this README.md file. Set this folder as your working directory using the menu bar: Session > Set Working Directory > To Source File Location, or a command like `setwd("C:/Users/username/Documents/HDS-plumber")`.
 
 Run the exercise_1_api_who_is_in_space_now.R script one line at a time (Ctrl-Enter) and read the comments as you go.
 

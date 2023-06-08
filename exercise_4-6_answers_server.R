@@ -34,6 +34,3 @@ function(country) {
   options(scipen=999) # Change number format on axes so not scientific
   plot(gapminder[gapminder$country==country, c("year", "pop")], xlab="Year", ylab="Population")
 }
-
-
-# Exercise 7

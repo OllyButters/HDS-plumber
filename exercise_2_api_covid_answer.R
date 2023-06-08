@@ -5,7 +5,6 @@
 
 library(httr)
 library(jsonlite)
-library(tidyverse)
 
 ##########################################
 # UK coronavirus data
@@ -20,10 +19,10 @@ content = fromJSON(rawToChar(response$content))
 content$data
 
 # Plot the data
-gg <- ggplot(data=content$data, mapping = aes(x=as.POSIXct(date), y=newCases)) +
-  geom_point(color="blue") +
-  xlab("Date") +
-  ylab("New cases") +
-  ggtitle("Covid-19 case rate in England")
-plot(gg)
+x=as.POSIXct(content$data$date)
+y=content$data$newCases
+plot(x, y, xlab="Date", ylab="New cases", main="Covid-19 case rate in England")
+
+
+
 
