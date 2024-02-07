@@ -10,7 +10,7 @@ library(httr)
 library(jsonlite)
 library(png)
 
-port_number = 3726
+port_number = 5555
 
 #####
 # Hello endpoint

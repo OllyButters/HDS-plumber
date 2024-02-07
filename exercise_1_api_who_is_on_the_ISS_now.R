@@ -1,5 +1,5 @@
 ################################################################################
-# exercise 1 API - Who is in space now?
+# exercise 1 API - Who is on the International Space Station right now?
 # Run this file one line at a time (Ctrl - Enter).
 ################################################################################
 
@@ -34,7 +34,7 @@ content
 # Print out just the people.
 content$people
 
-# Now you know who is in space right now!
+# Now you know who is on the International Space Station right now!
 
 
 

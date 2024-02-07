@@ -10,7 +10,7 @@ library(jsonlite)
 library(png)
 
 
-port_number = 9840
+port_number = 5555
 
 #####
 # UK endpoint

@@ -22,7 +22,7 @@ You can install missing packages with the following R code:
 ## Session running order
 
 - Lecture: Introduction to APIs
-- Exercise 1: Using an API - how many people are in space right now?
+- Exercise 1: Using an API - who is on the International Space Station right now?
 - Exercise 2: Using an API - what is the UK Covid-19 case rate?
 - Lecture: Introduction to plumber
 - Exercise 3: Run example plumber functions (/hello, /square, /plot)
@@ -30,32 +30,38 @@ You can install missing packages with the following R code:
 - Exercise 5: Write a plumber function to allow a user to find out the population of any country during any year in gapminder.
 - Exercise 6: Write a plumber function to plot the population change of a user defined country.
 
-## Exercise 1: Using an API - how many people are in space right now?
+## Exercise 1: Using an API - how many people are on the International Space Station right now?
 
-Open RStudio and navigate to the folder containing this README.md file. Set this folder as your working directory using the menu bar: Session > Set Working Directory > To Source File Location, or a command like `setwd("C:/Users/username/Documents/HDS-plumber")`.
+Open RStudio and navigate to the folder containing this `README.md` file. Set this folder as your working directory using the menu bar: Session > Set Working Directory > To Source File Location, or a command like `setwd("C:/Users/username/Documents/HDS-plumber")`.
 
-Run the exercise_1_api_who_is_in_space_now.R script one line at a time (Ctrl-Enter) and read the comments as you go.
+Run the `exercise_1_api_who_is_on_the_ISS_now.R` script one line at a time (Ctrl-Enter) and read the comments as you go.
 
 In a web browser open up the link directly to the API we are using: http://api.open-notify.org/astros.json . Depending on your browser you may see the raw JSON data, or it may be formatted nicely for you. Either way, you should be able to see the same data as you see in R.
 
 ## Exercise 2: Using an API - what is the UK Covid-19 case rate?
 
-Write a new R script to get the daily UK Covid-19 case rate and plot it.
-You can start with the exercise_1_api_who_is_in_space_now.R file as the basis for this exercise.
+Write a new R script to get the daily Covid-19 case rate in England and plot it.
+You can start with the `exercise_1_api_who_is_on_the_ISS_now.R` file as the basis for this exercise.
 The URL you will need to use is:
 
     https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=nation;areaName=england&structure={"date":"date","newCases":"newCasesByPublishDate"}
 
-If you get really stuck, the answer is in exercise_2_api_covid_answer.R
+If you get really stuck, the answer is in `exercise_2_api_covid_answer.R`
+
+## Lecture
+
+Back to the lecture notes to understand how to write our own APIs.
 
 ## Exercise 3: Run example plumber functions (/hello, /square, /plot)
 
 ### Server set up
 
-open exercise_3_plumber_example_server.R
+Open `exercise_3_plumber_example_server.R`
+
+Make sure you have opened the *server* file not the *client* file.
 
 In the menu bar above the source code click on "Run API", this will open a web
-browser with the swagger interface. Note the URL and port number.
+browser with the swagger interface. Note the URL and port number. 
 
 ### Explore with swagger
 
@@ -71,11 +77,11 @@ browser with the swagger interface. Note the URL and port number.
 Swagger is a web tool which calls the API for us and displays the data in an easy
 to use way. What happens if we call the API directly from a web browser without
 swagger? Paste the URLs from earlier into Chrome/Firefox/etc, they should look
-something like (the port will be different):
+something like (the port may be different):
 
-- 127.0.0.1:3726/hello
-- 127.0.0.1:3726/square?a=8
-- 127.0.0.1:3726/plot
+- 127.0.0.1:5555/hello
+- 127.0.0.1:5555/square?a=8
+- 127.0.0.1:5555/plot
 
 ### Explore with Rstudio
 
@@ -85,11 +91,11 @@ a second instance of RStudio (either Session > New Session, or navigate in your
 OS and click on the RStudio icon). Now we have one RStudio instance acting like
 a server (the one with plumber running) and the second RStudio is our client.
 
-In the second RStudio (the client) open exercise_3_plumber_example_client.R.
+In the second RStudio (the client) open `exercise_3_plumber_example_client.R`.
 You may need to edit the IP address and port used in the GET statements to match
 what your plumber instance has. Now step through the code, line at a time and
 you'll be interacting with example plumber code in the same way you did with the
-external APIs we started with (space and Covid-19).
+external APIs we started with (ISS and Covid-19).
 
 **Example answers to exercises 4,5,6 are in this repo - do not look at them unless you are stuck,
 I want you to write your own versions.**
@@ -111,17 +117,17 @@ To look at UK population in the year 1987
 
 In a new file, write a plumber function to return the number of people in the UK
 in 1982. It might be helpful to base it on the code in
-exercise_3_plumber_example_server.R file.
+`exercise_3_plumber_example_server.R` file.
 
 To run it you will need to stop the current plumber instance running - in the
 console window (below the code window) press the red stop button at the top.
 Then to start plumber again press the Run API button at the top. This will start
-swagger again so you can test it. You will need to do this every time you edit
-the plumber code.
+swagger again so you can test it. **You will need to do this every time you edit
+the plumber code**.
 
 Write some code to connect to your new endpoint to retrieve the data in the
 client RStudio you have running. It might be helpful to base this on the code in
-exercise_3_plumber_example_client.R
+`exercise_3_plumber_example_client.R`.
 
 ## Exercise 5: Write a plumber function to allow a user to find out the population of any country during any year in gapminder
 

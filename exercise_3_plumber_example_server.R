@@ -4,6 +4,9 @@
 # open a web browser with swagger running
 ################################################################################
 
+library(plumber)
+options("plumber.port" = 5555)
+
 #* Say hello
 #* @get /hello
 function() {

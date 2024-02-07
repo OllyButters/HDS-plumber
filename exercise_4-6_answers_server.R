@@ -4,6 +4,8 @@
 ###################################
 
 library(gapminder)
+library(plumber)
+options("plumber.port" = 5555)
 
 # Exercise 4
 
