@@ -22,31 +22,35 @@ You can install missing packages with the following R code:
 ## Session running order
 
 - Lecture: Introduction to APIs
-- Exercise 1: Using an API - who is on the International Space Station right now?
-- Exercise 2: Using an API - what is the UK Covid-19 case rate?
+- Exercise 1: Using an API - Useless facts
+- Exercise 2: Using an API - What is the influenza hospitalisation rate in England?
 - Lecture: Introduction to plumber
 - Exercise 3: Run example plumber functions (/hello, /square, /plot)
 - Exercise 4: Write a plumber function to use gapminder data to show population of the UK in 1982
 - Exercise 5: Write a plumber function to allow a user to find out the population of any country during any year in gapminder.
 - Exercise 6: Write a plumber function to plot the population change of a user defined country.
 
-## Exercise 1: Using an API - how many people are on the International Space Station right now?
+## Exercise 1: Using an API - Useless facts?
 
 Open RStudio and navigate to the folder containing this `README.md` file. Set this folder as your working directory using the menu bar: Session > Set Working Directory > To Source File Location, or a command like `setwd("C:/Users/username/Documents/HDS-plumber")`.
 
-Run the `exercise_1_api_who_is_on_the_ISS_now.R` script one line at a time (Ctrl-Enter) and read the comments as you go.
+Run the `exercise_1_api_useless_facts.R` script one line at a time (Ctrl-Enter) and read the comments as you go.
 
-In a web browser open up the link directly to the API we are using: http://api.open-notify.org/astros.json . Depending on your browser you may see the raw JSON data, or it may be formatted nicely for you. Either way, you should be able to see the same data as you see in R.
+In a web browser open up the link directly to the API we are using: https://uselessfacts.jsph.pl/api/v2/facts/random . Depending on your browser you may see the raw JSON data, or it may be formatted nicely for you. Either way, you should be able to see the same data as you see in R.
 
-## Exercise 2: Using an API - what is the UK Covid-19 case rate?
+## Exercise 2: Using an API - what is the influenza hospitalisation rate in England?
 
-Write a new R script to get the daily Covid-19 case rate in England and plot it.
-You can start with the `exercise_1_api_who_is_on_the_ISS_now.R` file as the basis for this exercise.
+Write a new R script to get the influenza hospitalisation rate in England and plot it.
+You can start with the `exercise_1_api_useless_facts.R` file as the basis for this exercise.
 The URL you will need to use is:
 
-    https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=nation;areaName=england&structure={"date":"date","newCases":"newCasesByPublishDate"}
+    https://api.ukhsa-dashboard.data.gov.uk/themes/infectious_disease/sub_themes/respiratory/topics/Influenza/geography_types/Nation/geographies/England/metrics/influenza_healthcare_hospitalAdmissionRateByWeek?age=all&page=2&page_size=365
 
-If you get really stuck, the answer is in `exercise_2_api_covid_answer.R`
+Note how the URL is structured, it is a bit more complex than the previous one with path parameters and query parameters.
+
+HINT: The interesting bit is in `content$results` this time.
+
+If you get really stuck, the answer is in `exercise_2_api_influenza_answer.R`
 
 ## Lecture
 
