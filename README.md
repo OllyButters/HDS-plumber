@@ -30,7 +30,7 @@ You can install missing packages with the following R code:
 - Exercise 5: Write a plumber function to allow a user to find out the population of any country during any year in gapminder.
 - Exercise 6: Write a plumber function to plot the population change of a user defined country.
 
-## Exercise 1: Using an API - Useless facts?
+## Exercise 1: Using an API - Useless facts
 
 Open RStudio and navigate to the folder containing this `README.md` file. Set this folder as your working directory using the menu bar: Session > Set Working Directory > To Source File Location, or a command like `setwd("C:/Users/username/Documents/HDS-plumber")`.
 
@@ -48,7 +48,12 @@ The URL you will need to use is:
 
 Note how the URL is structured, it is a bit more complex than the previous one with path parameters and query parameters.
 
-HINT: The interesting bit is in `content$results` this time.
+HINT: The interesting bit is in `content$results` this time (it was `content$text` last time).
+
+HINT: Plot the `date` and `metric_value` columns.
+
+# Check to see if your results match the data on the website
+# https://ukhsa-dashboard.data.gov.uk/respiratory-viruses/influenza?areaType=Nation&areaName=England
 
 If you get really stuck, the answer is in `exercise_2_api_influenza_answer.R`
 
@@ -99,7 +104,7 @@ In the second RStudio (the client) open `exercise_3_plumber_example_client.R`.
 You may need to edit the IP address and port used in the GET statements to match
 what your plumber instance has. Now step through the code, line at a time and
 you'll be interacting with example plumber code in the same way you did with the
-external APIs we started with (ISS and Covid-19).
+external APIs we started with (Useless facts and Influenza).
 
 **Example answers to exercises 4,5,6 are in this repo - do not look at them unless you are stuck,
 I want you to write your own versions.**
